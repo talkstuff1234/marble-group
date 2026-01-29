@@ -1,65 +1,257 @@
+import { assets } from "@/assets/assets";
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <main className="px-4 py-3">
+        {/* HERO SECTION */}
+        <section className="relative w-full min-h-[95vh] rounded-3xl overflow-hidden flex items-end">
+          {/* Overlay */}
+          <Image
+            src={assets.images.hero}
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority // Important for above-the-fold images
+            quality={90}
+          />
+          <div className="absolute inset-0 bg-black/50" />
+
+          {/* Content */}
+          <div className="relative z-10 max-w-5xl p-6 flex flex-col">
+            <h1 className="text-white text-3xl md:text-5xl font-light leading-tight max-w-3xl">
+              Building essential industries for sustainable growth
+            </h1>
+
+            <div className="mt-6 space-y-4 max-w-2xl">
+              <p className="text-white/80 text-sm md:text-base">
+                Marble Group is a diversified Nigerian operating group with
+                interests across food systems, solid minerals, construction and
+                contracts, and aviation services.
+              </p>
+              <p className="text-white/80 text-sm md:text-base">
+                Through disciplined execution and long-term investment, the
+                Group develops businesses that support economic resilience,
+                infrastructure development, and regional connectivity.
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <button className="px-6 py-3 rounded-full bg-white text-sm">
+                Explore Our Group
+              </button>
+              <button className="px-6 py-3 rounded-full bg-white/20 text-white text-sm backdrop-blur-md">
+                Partner With Us
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT WE DO SECTION */}
+        <section className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="rounded-md overflow-hidden">
+              <Image
+                src={assets.images.homeImage1}
+                alt="What We Do"
+                width={700}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div>
+              <h2 className="text-3xl md:text-4xl text-[#212121] font-normal">
+                What We Do
+              </h2>
+
+              <p className="mt-4 text-[#6A6A6A] max-w-lg">
+                Marble Group builds and operates businesses in sectors critical
+                to national development and long-term economic growth.
+              </p>
+
+              <ul className="mt-6 space-y-4">
+                <li className="inline-flex items-center  justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Food processing, trading, and supply systems
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Solid mineral exploration and development
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Construction, contracts, and project execution
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Aviation and air services (under development)
+                  </span>
+                </li>
+              </ul>
+
+              <p className="mt-6 text-sm text-[#6A6A6A] max-w-lg">
+                Each business operates with sector-specific expertise while
+                benefiting from Group-level oversight and strategic direction.
+              </p>
+              <button className="bg-[#867A33] text-white flex p-3 gap-2 rounded-full mt-4">
+                <span>Our Operating Approach</span>
+                <Image src={assets.icons.arrowDown} alt="arrow down" />
+              </button>
+            </div>
+          </div>
+        </section>
+        <section className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div>
+              <h2 className="text-3xl md:text-4xl text-[#212121] font-normal">
+                Our Operating Approach
+              </h2>
+
+              <p className="mt-4 text-[#6A6A6A] max-w-lg">
+                Marble Group applies a disciplined operating approach designed
+                to ensure consistency, accountability, and long-term performance
+                across all subsidiaries.
+              </p>
+
+              <ul className="mt-6 space-y-4">
+                <li className="inline-flex items-center  justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Clear governance and reporting structures
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Defined accountability at Group and subsidiary levels
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Compliance with applicable legal and regulatory frameworks
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Risk-aware decision-making and capital discipline
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Continuous improvement aligned with operational realities
+                  </span>
+                </li>
+              </ul>
+
+              <p className="mt-6 text-sm text-[#6A6A6A] max-w-lg">
+                This approach enables the Group to manage diverse operations
+                effectively while maintaining alignment with long-term
+                objectives.
+              </p>
+              <button className="bg-[#867A33] text-white flex p-3 gap-2 rounded-full mt-4">
+                <span>How We Operate</span>
+                <Image src={assets.icons.arrowDown} alt="arrow down" />
+              </button>
+            </div>
+            {/* Image */}
+            <div className="rounded-md overflow-hidden">
+              <Image
+                src={assets.images.homeImage2}
+                alt="What We Do"
+                width={700}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <section className="w-full  px-6 py-20 bg-[#14161A]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="rounded-md overflow-hidden">
+              <Image
+                src={assets.images.homeImage3}
+                alt="What We Do"
+                width={700}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div>
+              <h2 className="text-3xl md:text-4xl text-white font-normal">
+                Strategic Focus
+              </h2>
+
+              <p className="mt-4 text-white max-w-lg">
+                The Group’s strategic focus is on building businesses that:
+              </p>
+
+              <ul className="mt-6 space-y-4">
+                <li className="inline-flex items-center mr-2 justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Operate in regulated, essential sectors
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Deliver measurable operational value
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center mr-2 justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Scale responsibly over time
+                  </span>
+                </li>
+
+                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
+                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                  <span className="text-[#6A6A6A]">
+                    Align with national development priorities
+                  </span>
+                </li>
+              </ul>
+
+              <p className="mt-6 text-sm text-white max-w-lg">
+                Growth is pursued deliberately, with emphasis on operational
+                readiness, governance maturity, and sustainable value creation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
