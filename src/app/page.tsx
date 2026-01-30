@@ -1,24 +1,58 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 
+/* -------- Intersection Observer Hook -------- */
+function useReveal<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("reveal-active");
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return ref;
+}
+
 export default function HomePage() {
+  const heroRef = useReveal<HTMLElement>();
+  const whatWeDoRef = useReveal<HTMLElement>();
+  const approachRef = useReveal<HTMLElement>();
+  const strategyRef = useReveal<HTMLElement>();
+
   return (
     <>
-      <main className="px-4 py-3">
+      <header className="p-2">
         {/* HERO SECTION */}
-        <section className="relative w-full min-h-[95vh] rounded-3xl overflow-hidden flex items-end">
-          {/* Overlay */}
+        <section
+          ref={heroRef}
+          className="relative w-full min-h-[70vh] md:min-h-[95vh] rounded-3xl overflow-hidden flex items-end reveal "
+        >
           <Image
             src={assets.images.hero}
             alt="Hero background"
             fill
             className="object-cover"
-            priority // Important for above-the-fold images
+            priority
             quality={90}
           />
           <div className="absolute inset-0 bg-black/50" />
 
-          {/* Content */}
           <div className="relative z-10 max-w-5xl p-6 flex flex-col">
             <h1 className="text-white text-3xl md:text-5xl font-light leading-tight max-w-3xl">
               Building essential industries for sustainable growth
@@ -37,22 +71,32 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* CTAs */}
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="px-6 py-3 rounded-full bg-white text-sm">
+              <a
+                href="#what-we-do"
+                className="px-6 py-3 rounded-full bg-white text-sm"
+              >
                 Explore Our Group
-              </button>
-              <button className="px-6 py-3 rounded-full bg-white/20 text-white text-sm backdrop-blur-md">
+              </a>
+              <a
+                href="#strategic-focus"
+                className="px-6 py-3 rounded-full bg-white/20 text-white text-sm backdrop-blur-md"
+              >
                 Partner With Us
-              </button>
+              </a>
             </div>
           </div>
         </section>
+      </header>
 
-        {/* WHAT WE DO SECTION */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
+      <main className="px-4 py-3">
+        {/* WHAT WE DO */}
+        <section
+          id="what-we-do"
+          ref={whatWeDoRef}
+          className="max-w-7xl mx-auto px-6 py-20 reveal"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image */}
             <div className="rounded-md overflow-hidden">
               <Image
                 src={assets.images.homeImage1}
@@ -63,7 +107,6 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl text-[#212121] font-normal">
                 What We Do
@@ -75,28 +118,25 @@ export default function HomePage() {
               </p>
 
               <ul className="mt-6 space-y-4">
-                <li className="inline-flex items-center  justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Food processing, trading, and supply systems
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Solid mineral exploration and development
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Construction, contracts, and project execution
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Aviation and air services (under development)
@@ -108,16 +148,25 @@ export default function HomePage() {
                 Each business operates with sector-specific expertise while
                 benefiting from Group-level oversight and strategic direction.
               </p>
-              <button className="bg-[#867A33] text-white flex p-3 gap-2 rounded-full mt-4">
+
+              <a
+                href="#operating-approach"
+                className="bg-[#867A33] text-white inline-flex p-3 gap-2 rounded-full mt-4"
+              >
                 <span>Our Operating Approach</span>
                 <Image src={assets.icons.arrowDown} alt="arrow down" />
-              </button>
+              </a>
             </div>
           </div>
         </section>
-        <section className="max-w-7xl mx-auto px-6 py-20">
+
+        {/* OPERATING APPROACH */}
+        <section
+          id="operating-approach"
+          ref={approachRef}
+          className="max-w-7xl mx-auto px-6 py-20 reveal"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl text-[#212121] font-normal">
                 Our Operating Approach
@@ -130,35 +179,31 @@ export default function HomePage() {
               </p>
 
               <ul className="mt-6 space-y-4">
-                <li className="inline-flex items-center  justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Clear governance and reporting structures
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Defined accountability at Group and subsidiary levels
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Compliance with applicable legal and regulatory frameworks
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Risk-aware decision-making and capital discipline
                   </span>
                 </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
+                <li className="inline-flex items-center gap-3 text-sm border border-[#EFEFF3] rounded-full p-2">
                   <span className="w-3 h-3 rounded-full bg-[#867A33]" />
                   <span className="text-[#6A6A6A]">
                     Continuous improvement aligned with operational realities
@@ -171,12 +216,8 @@ export default function HomePage() {
                 effectively while maintaining alignment with long-term
                 objectives.
               </p>
-              <button className="bg-[#867A33] text-white flex p-3 gap-2 rounded-full mt-4">
-                <span>How We Operate</span>
-                <Image src={assets.icons.arrowDown} alt="arrow down" />
-              </button>
             </div>
-            {/* Image */}
+
             <div className="rounded-md overflow-hidden">
               <Image
                 src={assets.images.homeImage2}
@@ -190,68 +231,81 @@ export default function HomePage() {
         </section>
       </main>
 
-      <section className="w-full  px-6 py-20 bg-[#14161A]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image */}
-            <div className="rounded-md overflow-hidden">
-              <Image
-                src={assets.images.homeImage3}
-                alt="What We Do"
-                width={700}
-                height={500}
-                className="w-full h-full object-cover"
-              />
-            </div>
+      {/* STRATEGIC FOCUS */}
+      <section
+        id="strategic-focus"
+        ref={strategyRef}
+        className="w-full px-6 py-20 bg-[#14161A] reveal"
+      >
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="rounded-md overflow-hidden">
+            <Image
+              src={assets.images.homeImage3}
+              alt="What We Do"
+              width={700}
+              height={500}
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-            {/* Content */}
-            <div>
-              <h2 className="text-3xl md:text-4xl text-white font-normal">
-                Strategic Focus
-              </h2>
+          <div>
+            <h2 className="text-3xl md:text-4xl text-white font-normal">
+              Strategic Focus
+            </h2>
 
-              <p className="mt-4 text-white max-w-lg">
-                The Group’s strategic focus is on building businesses that:
-              </p>
+            <p className="mt-4 text-white max-w-lg">
+              The Group’s strategic focus is on building businesses that:
+            </p>
 
-              <ul className="mt-6 space-y-4">
-                <li className="inline-flex items-center mr-2 justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
-                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
-                  <span className="text-[#6A6A6A]">
-                    Operate in regulated, essential sectors
-                  </span>
-                </li>
+            <ul className="mt-6 space-y-4">
+              <li className="inline-flex items-center gap-3 text-sm bg-white border border-[#EFEFF3] rounded-full p-2">
+                <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                <span className="text-[#6A6A6A]">
+                  Operate in regulated, essential sectors
+                </span>
+              </li>
+              <li className="inline-flex items-center gap-3 text-sm bg-white border border-[#EFEFF3] rounded-full p-2">
+                <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                <span className="text-[#6A6A6A]">
+                  Deliver measurable operational value
+                </span>
+              </li>
+              <li className="inline-flex items-center gap-3 text-sm bg-white border border-[#EFEFF3] rounded-full p-2">
+                <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                <span className="text-[#6A6A6A]">
+                  Scale responsibly over time
+                </span>
+              </li>
+              <li className="inline-flex items-center gap-3 text-sm bg-white border border-[#EFEFF3] rounded-full p-2">
+                <span className="w-3 h-3 rounded-full bg-[#867A33]" />
+                <span className="text-[#6A6A6A]">
+                  Align with national development priorities
+                </span>
+              </li>
+            </ul>
 
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
-                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
-                  <span className="text-[#6A6A6A]">
-                    Deliver measurable operational value
-                  </span>
-                </li>
-
-                <li className="inline-flex items-center mr-2 justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
-                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
-                  <span className="text-[#6A6A6A]">
-                    Scale responsibly over time
-                  </span>
-                </li>
-
-                <li className="inline-flex items-center justify-start gap-3 text-sm border border-[#EFEFF3] bg-white rounded-full p-2">
-                  <span className="w-3 h-3 rounded-full bg-[#867A33]" />
-                  <span className="text-[#6A6A6A]">
-                    Align with national development priorities
-                  </span>
-                </li>
-              </ul>
-
-              <p className="mt-6 text-sm text-white max-w-lg">
-                Growth is pursued deliberately, with emphasis on operational
-                readiness, governance maturity, and sustainable value creation.
-              </p>
-            </div>
+            <p className="mt-6 text-sm text-white max-w-lg">
+              Growth is pursued deliberately, with emphasis on operational
+              readiness, governance maturity, and sustainable value creation.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Reveal animation styles */}
+      <style jsx global>{`
+        .reveal {
+          opacity: 0;
+          transform: translateY(32px);
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+        }
+        .reveal-active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </>
   );
 }
