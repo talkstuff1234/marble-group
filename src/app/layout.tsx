@@ -2,6 +2,11 @@ import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 
+export const metadata = {
+  title: "Marble Group",
+  description: "Building essential industries for sustainable growth",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
