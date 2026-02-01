@@ -125,10 +125,9 @@ export default function About() {
           </h2>
 
           <p className="text-sm text-neutral-300 leading-relaxed">
-            Marble Group operates as the brand-facing identity of Marble &
-            Groove Nig. Ltd, the legal holding entity. Governance
+            Marble Group operates as a brand-facing identity. Governance
             responsibilities are defined at both Group and subsidiary levels to
-            ensure clarity, oversight, and operational control.
+            ensure clarity, effective oversight, and operational control.
           </p>
         </div>
 
@@ -381,7 +380,9 @@ export default function About() {
             </ul>
 
             <p className="mt-6 text-sm md:text-base text-[#6A6A6A] leading-relaxed">
-             Risks are identified, assessed, and managed through internal controls, approval processes, and oversight mechanisms appropriate to each sector.
+              Risks are identified, assessed, and managed through internal
+              controls, approval processes, and oversight mechanisms appropriate
+              to each sector.
             </p>
           </div>
         </div>

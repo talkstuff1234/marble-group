@@ -7,6 +7,9 @@ import homeImage3 from "./images/home-image-3.jpg";
 import aboutHero from "./images/about-hero.jpg";
 import aboutImage1 from "./images/about-image-1.jpg";
 import aboutImage2 from "./images/about-image-2.jpg";
+import aboutImage3 from "./images/about-imiage-3.jpg";
+import aboutImage4 from "./images/about-image-4.jpg";
+import aboutImage5 from "./images/about-image-5.jpg";
 import subsidiariesHero from "./images/subsidiaries-hero.jpg";
 import subsidiariesImage1 from "./images/subsidiaries-image-1.png";
 import subsidiariesImage2 from "./images/subsidiaries-image-2.png";
@@ -25,6 +28,7 @@ import mediaImage2 from "./images/media-image-2.jpg";
 import mediaImage3 from "./images/media-image-3.jpg";
 import careerHero from "./images/career-hero.jpg";
 import carrerImage1 from "./images/careers-image-1.png";
+import careerImage1 from './images/career-image-1.jpg'
 import careerImage2 from "./images/career-image-2.jpg";
 import careerImage3 from "./images/career-image-3.jpg";
 import careerImage4 from "./images/career-image-4.jpg";
@@ -33,6 +37,12 @@ import contactImage1 from "./images/contact-image-1.jpg";
 import contactImage2 from "./images/contact-imiage-2.jpg";
 import strategicPartnersHero from "./images/strategic-partners-hero.jpg";
 import governanceImage3 from "./images/governance-image-3.jpg";
+import strategicImage1 from "./images/strategic-image-1.png";
+import strategicImage2 from "./images/strategic-image-2.png";
+import strategicImage3 from "./images/strategic-image-3.jpg";
+import strategicImage4 from "./images/strategic-image-4.jpg";
+import strategicImage5 from "./images/strategic-image-5.jpg";
+import strategicImage6 from "./images/strategic-image-6.jpg";
 
 //icons
 import logo from "./icons/logo.svg";
@@ -51,6 +61,9 @@ export const assets = {
     aboutHero,
     aboutImage1,
     aboutImage2,
+    aboutImage3,
+    aboutImage4,
+    aboutImage5,
     subsidiariesHero,
     subsidiariesImage1,
     subsidiariesImage2,
@@ -68,6 +81,7 @@ export const assets = {
     mediaImage2,
     mediaImage3,
     careerHero,
+    careerImage1,
     carrerImage1,
     careerImage2,
     careerImage3,
@@ -76,6 +90,12 @@ export const assets = {
     contactImage1,
     contactImage2,
     strategicPartnersHero,
+    strategicImage1,
+    strategicImage2,
+    strategicImage3,
+    strategicImage4,
+    strategicImage5,
+    strategicImage6,
   },
   icons: {
     logo,

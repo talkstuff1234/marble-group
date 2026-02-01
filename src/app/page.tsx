@@ -60,14 +60,18 @@ export default function HomePage() {
 
             <div className="mt-6 space-y-4 max-w-2xl">
               <p className="text-white/80 text-sm md:text-base">
-                Marble Group is a diversified Nigerian operating group with
-                interests across food systems, solid minerals, construction and
-                contracts, and aviation services.
+                Marble Group is a diversified operating group with roots in
+                Nigeria and activities extending across Africa, with interests
+                spanning food systems, solid minerals, construction and
+                contracts, and aviation services. Through disciplined execution
+                and long-term investment, the Group develops businesses that
+                support economic resilience, infrastructure development, and
+                regional connectivity.
               </p>
               <p className="text-white/80 text-sm md:text-base">
-                Through disciplined execution and long-term investment, the
-                Group develops businesses that support economic resilience,
-                infrastructure development, and regional connectivity.
+                Marble Group operates through a portfolio of controlled
+                subsidiaries, each focused on its sector while aligned with
+                Group-wide governance, compliance, and performance standards.
               </p>
             </div>
 

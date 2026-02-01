@@ -31,24 +31,62 @@ export default function StrategicPartnersHero() {
           </div>
 
           {/* Partner cards */}
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
-            {/* Card 2 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
-            {/* Card 3 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
-            {/* Card 4 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
+          <div className="mt-14 flex flex-col gap-6">
+            {/* TOP ROW */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <div className="h-24 bg-white rounded-xl shadow-sm flex items-center justify-center px-6">
+                <Image
+                  src={assets.images.strategicImage1}
+                  alt=""
+                  className="max-h-24 object-contain"
+                />
+              </div>
 
-            {/* Card 5 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
-            {/* Card 6 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
-            {/* Card 7 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
-            {/* Card 8 */}
-            <div className="h-24 rounded-xl bg-white shadow-sm" />
+              <div className="h-24 bg-white rounded-xl shadow-sm flex items-center justify-center px-6">
+                <Image
+                  src={assets.images.strategicImage2}
+                  alt=""
+                  className="max-h-12 object-contain"
+                />
+              </div>
+
+              <div className="h-24 bg-white rounded-xl shadow-sm flex items-center justify-center px-6">
+                <Image
+                  src={assets.images.strategicImage3}
+                  alt=""
+                  className="max-h-12 object-contain"
+                />
+              </div>
+
+              <div className="h-24 bg-white rounded-xl shadow-sm flex items-center justify-center px-6">
+                <Image
+                  src={assets.images.strategicImage4}
+                  alt=""
+                  className="max-h-12 object-contain"
+                />
+              </div>
+            </div>
+
+            {/* BOTTOM ROW – CENTERED */}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-2 gap-6 w-full max-w-[520px]">
+                <div className="h-24 bg-white rounded-xl shadow-sm flex items-center justify-center px-6">
+                  <Image
+                    src={assets.images.strategicImage5}
+                    alt=""
+                    className="max-h-22 object-contain"
+                  />
+                </div>
+
+                <div className="h-24 bg-white rounded-xl shadow-sm flex items-center justify-center px-6">
+                  <Image
+                    src={assets.images.strategicImage6}
+                    alt=""
+                    className="max-h-12 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

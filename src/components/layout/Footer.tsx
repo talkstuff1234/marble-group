@@ -21,8 +21,9 @@ function Footer() {
           <div className="max-w-sm">
             <Image src={assets.icons.logo} alt="logo" width={40} />
             <p className="mt-4 text-sm text-[#6A6A6A] leading-relaxed">
-              Marble Group advances biblical literacy through research,
-              technology, and community driven learning.
+              Marble Group operates through a portfolio of controlled
+              subsidiaries, each focused on its sector while aligned with
+              Group-wide governance, compliance, and performance standards.
             </p>
           </div>
 
@@ -34,8 +35,8 @@ function Footer() {
                 Subsidiaries
               </h4>
               <ul className="space-y-3 text-sm text-[#6A6A6A]">
-                <li>Marble Grove Foods</li>
-                <li>Westlands Minerals and Mining</li>
+                <li>Marble Foods</li>
+                <li>Westland Minerals and Mining</li>
                 <li>Marble Air</li>
               </ul>
             </div>

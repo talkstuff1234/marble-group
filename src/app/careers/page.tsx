@@ -79,7 +79,7 @@ export default function Careers() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="rounded-md overflow-hidden hover:scale-[1.02] transition-transform duration-300">
               <Image
-                src={assets.images.mediaImage1}
+                src={assets.images.careerImage1}
                 alt="Working at Marble Group"
                 width={700}
                 height={500}
@@ -309,10 +309,10 @@ export default function Careers() {
               <p className="mt-4 text-white text-sm md:text-base leading-relaxed">
                 Submissions can be sent to:{" "}
                 <a
-                  href="mailto:careers@marbleandgroove.com"
+                  href="mailto:info@marblegroup.ng"
                   className="underline hover:text-white/80 transition-colors"
                 >
-                  careers@marbleandgroove.com
+                  info@marblegroup.ng
                 </a>
               </p>
               <p className="mt-4 text-white text-sm md:text-base leading-relaxed">

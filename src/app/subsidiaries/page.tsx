@@ -103,9 +103,13 @@ export default function Subsidiaries() {
                     creation across agricultural and food systems.
                   </p>
 
-                  <button className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition">
+                  <a
+                    href="https://marblefoods.com.ng/"
+                    target="_blank"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition"
+                  >
                     Visit Website <span>→</span>
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -139,9 +143,13 @@ export default function Subsidiaries() {
                     governance, risk management, and strategic oversight.
                   </p>
 
-                  <button className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition">
+                  <a
+                    href="https://westlandminerals.com/"
+                    target="_blank"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition"
+                  >
                     Visit Website <span>→</span>
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -177,9 +185,13 @@ export default function Subsidiaries() {
                     compliance, and on-time performance.
                   </p>
 
-                  <button className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition">
+                  <a
+                    href="https://marbleandgrove.com/"
+                    target="_blank"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition"
+                  >
                     Visit Website <span>→</span>
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -208,7 +220,7 @@ export default function Subsidiaries() {
                   </p>
 
                   <button className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D1D5DB] px-5 py-2 text-sm text-[#212121] hover:bg-white transition">
-                    Visit Website <span>→</span>
+                    Coming Soon
                   </button>
                 </div>
               </div>

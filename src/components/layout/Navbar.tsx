@@ -60,9 +60,7 @@ export default function Navbar() {
             <Image
               src={assets.icons.logo}
               alt="logo"
-              width={140}
-              height={140}
-              className="h-12 w-auto object-contain"
+              className="h-12 w-auto"
               priority
             />
           </div>
