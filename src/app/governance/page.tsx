@@ -664,10 +664,10 @@ export default function About() {
             </h2>
 
             <p className="mt-4 text-[#6A6A6A] max-w-lg">
-              Marble Group operates as the brand identity of Marble & Groove
-              Nig. Ltd, a company incorporated in Nigeria. All subsidiaries
-              operate within applicable legal and regulatory frameworks relevant
-              to their respective sectors.
+              Marble Group serves as a brand identity, a company incorporated in
+              Nigeria. All subsidiaries conduct operations in accordance with
+              applicable legal and regulatory requirements within their
+              respective sectors.
             </p>
           </div>
 
