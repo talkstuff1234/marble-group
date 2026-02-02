@@ -131,7 +131,7 @@ export default function Subsidiaries() {
                   </h3>
 
                   <p className="mt-3 text-sm text-[#6A6A6A] leading-relaxed">
-                    Westlands Mining and Minerals Ltd is engaged in solid
+                    Westland Mining and Minerals Ltd is engaged in solid
                     mineral exploration, development, and responsible resource
                     extraction. The company operates within Nigeria’s regulatory
                     framework and applies disciplined operating standards
@@ -139,7 +139,7 @@ export default function Subsidiaries() {
                   </p>
 
                   <p className="mt-3 text-sm text-[#6A6A6A] leading-relaxed">
-                    Westlands Mining and Minerals Ltd benefits from Group-level
+                    Westland Mining and Minerals Ltd benefits from Group-level
                     governance, risk management, and strategic oversight.
                   </p>
 

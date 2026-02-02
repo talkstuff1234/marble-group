@@ -258,7 +258,7 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-4 text-white max-w-lg">
-              The Group’s strategic focus is on building businesses that:
+              The Group’s strategic focus is to build businesses that:
             </p>
 
             <ul className="mt-6 space-y-4">

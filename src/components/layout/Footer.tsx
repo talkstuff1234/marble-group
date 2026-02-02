@@ -72,7 +72,12 @@ function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row md:justify-between gap-4 text-xs text-[#6A6A6A]">
           <span>© 2025 Marble Group. All rights reserved</span>
-
+          <span>
+            Created by{" "}
+            <a href="https://www.talkstuff.social/" className="text-[#867A33]">
+              Talkstuff
+            </a>
+          </span>
           <div className="flex gap-6">
             <Link href="/terms">Terms of Service</Link>
             <Link href="/privacy">Privacy Policy</Link>
