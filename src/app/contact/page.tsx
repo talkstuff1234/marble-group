@@ -103,8 +103,7 @@ export default function Subsidiaries() {
                 Marble Group
               </p>
               <p className="mt-4 text-white text-sm md:text-base leading-relaxed">
-                [Head Office Address Line 1]
-                <br /> [City, State, Nigeria]
+                9 Ichie Mike Ejezie, Kado Abuja
               </p>
             </div>
           </div>
@@ -130,7 +129,7 @@ export default function Subsidiaries() {
                 development matters:
               </p>
               <p className="mt-4 text-white text-sm md:text-base leading-relaxed">
-                Email: info@marbleandgroove.com (placeholder)
+                Email: info@marblegroup.ng
               </p>
             </div>
 
