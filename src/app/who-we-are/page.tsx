@@ -280,8 +280,8 @@ export default function About() {
             </h2>
 
             <p className="mt-4 text-white text-sm md:text-base leading-relaxed">
-              To be a leading Pan-African group shaping industries, inspiring
-              innovation, and creating lasting impact globally.
+              To be a world-class group shaping industries, pioneering
+              innovation, and creating enduring impact across the globe.
             </p>
           </div>
         </div>

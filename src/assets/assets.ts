@@ -43,6 +43,7 @@ import strategicImage3 from "./images/strategic-image-3.jpg";
 import strategicImage4 from "./images/strategic-image-4.jpg";
 import strategicImage5 from "./images/strategic-image-5.jpg";
 import strategicImage6 from "./images/strategic-image-6.jpg";
+import marbleGroupLogo from './images/marble-group-logo.png';
 
 //icons
 import logo from "./icons/logo.svg";
@@ -96,6 +97,7 @@ export const assets = {
     strategicImage4,
     strategicImage5,
     strategicImage6,
+    marbleGroupLogo,
   },
   icons: {
     logo,

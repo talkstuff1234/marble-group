@@ -90,9 +90,9 @@ export default function Navbar() {
           <Link href="/" aria-label="Home">
             <div className="bg-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full flex items-center justify-center shadow-lg">
               <Image
-                src={assets.icons.logo}
+                src={assets.images.marbleGroupLogo}
                 alt="logo"
-                className="h-8 sm:h-10 md:h-12 w-auto"
+                className="h-10 sm:h-10 md:h-12 w-auto"
                 priority
               />
             </div>

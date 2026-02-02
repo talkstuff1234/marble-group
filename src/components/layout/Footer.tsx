@@ -19,7 +19,7 @@ function Footer() {
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
           {/* Left */}
           <div className="max-w-sm">
-            <Image src={assets.icons.logo} alt="logo" width={40} />
+            <Image src={assets.images.marbleGroupLogo} alt="logo" width={40} />
             <p className="mt-4 text-sm text-[#6A6A6A] leading-relaxed">
               Marble Group operates through a portfolio of controlled
               subsidiaries, each focused on its sector while aligned with
@@ -35,8 +35,14 @@ function Footer() {
                 Subsidiaries
               </h4>
               <ul className="space-y-3 text-sm text-[#6A6A6A]">
-                <li>Marble Foods</li>
-                <li>Westland Minerals and Mining</li>
+                <li>
+                  <a href="https://marblefoods.com.ng/">Marble Foods</a>
+                </li>
+                <li>
+                  <a href="https://westlandminerals.com/">
+                    Westland Minerals and Mining
+                  </a>
+                </li>
                 <li>Marble Air</li>
               </ul>
             </div>
